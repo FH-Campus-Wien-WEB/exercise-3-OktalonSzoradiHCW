@@ -1,0 +1,7 @@
+/* stylelint-disable-next-line defensive-css/require-pure-selectors */
+body {
+  margin: 0;
+  background-color: hsl(0deg 0% 95%);
+  color: hsl(0deg 0% 15%);
+  font-family: sans-serif;
+}

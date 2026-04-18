@@ -1,0 +1,179 @@
+/* stylelint-disable defensive-css/require-pure-selectors */
+
+.movie:not([hidden]) {
+  max-inline-size: initial;
+}
+
+.movie-form:not([hidden]) {
+  display: flex;
+  flex-direction: column;
+}
+
+/* stylelint-enable defensive-css/require-pure-selectors */
+
+.movie-form__select,
+.movie-form__textarea,
+.movie-form__input {
+  margin-block-end: 1rem;
+  border: none;
+  border-radius: 2px;
+  box-shadow:
+    0 0 0 1px hsl(0deg 0% 0% / 25%),
+    0 1px 0 1px hsl(0deg 0% 100% / 50%),
+    inset 0 2px 4px 0 hsl(0deg 0% 0% / 25%);
+  background: hsl(0deg 0% 100% / 75%);
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.movie-form__textarea {
+  font-family: inherit;
+}
+
+/* stylelint-disable-next-line selector-id-pattern */
+#movie-form__poster-url {
+  font-family: monospace;
+}
+
+.movie-form__select:focus-visible,
+.movie-form__textarea:focus-visible,
+.movie-form__input:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 1px hsl(0deg 0% 0% / 25%),
+    0 1px 0 1px hsl(0deg 0% 100% / 50%),
+    inset 0 2px 4px 0 hsl(0deg 0% 0% / 25%),
+    0 0 8px 4px hsl(200deg 100% 50% / 25%);
+  background: hsl(200deg 100% 99% / 95%);
+}
+
+/* stylelint-disable-next-line defensive-css/require-pure-selectors */
+hr {
+  opacity: 0.25;
+}
+
+.movie-form__button {
+  display: inline-block;
+  transition-duration: 1000ms;
+  margin: 0.5rem 1rem 0 0;
+  border: none;
+  border-radius: 4px;
+  box-shadow:
+    inset 0 0 0 1px hsl(0deg 0% 100% / 50%),
+    inset 0 2px 0 0 hsl(0deg 0% 100% / 15%),
+    inset 0 -2px 0 0 hsl(0deg 0% 100% / 25%),
+    0 0 0 1px hsl(0deg 0% 0% / 25%),
+    0 2px 4px 0 hsl(0deg 0% 0% / 25%);
+  background:
+    linear-gradient(
+      to right,
+      hsl(0deg 0% 0% / 5%),
+      transparent,
+      hsl(0deg 0% 0% / 5%)
+    ),
+    linear-gradient(
+      to bottom,
+      hsl(0deg 0% 95%),
+      hsl(0deg 0% 75%),
+      hsl(0deg 0% 80%)
+    );
+  padding: 0.5rem 2rem;
+  text-shadow: 0 -0.5pt 0.25pt hsl(0deg 0% 100% / 50%);
+  color: hsl(0deg 0% 15%);
+  font: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.movie-form__button--save {
+  box-shadow:
+    inset 0 0 0 1px hsl(0deg 0% 100% / 50%),
+    inset 0 2px 0 0 hsl(0deg 0% 100% / 15%),
+    inset 0 -2px 0 0 hsl(0deg 0% 100% / 25%),
+    0 0 0 1px hsl(200deg 50% 25% / 50%),
+    0 2px 4px 0 hsl(200deg 50% 25% / 50%);
+  background:
+    linear-gradient(
+      to right,
+      hsl(0deg 0% 0% / 5%),
+      transparent,
+      hsl(0deg 0% 0% / 5%)
+    ),
+    linear-gradient(
+      to bottom,
+      hsl(200deg 50% 95%),
+      hsl(200deg 50% 75%),
+      hsl(200deg 50% 80%)
+    );
+}
+
+@media (hover: hover) {
+  .movie-form__button:focus-visible,
+  .movie-form__button:hover {
+    transition-duration: 50ms;
+    box-shadow:
+      inset 0 0 0 1px hsl(0deg 0% 100% / 50%),
+      inset 0 2px 0 0 hsl(0deg 0% 100% / 15%),
+      inset 0 -2px 0 0 hsl(0deg 0% 100% / 25%),
+      0 0 0 1px hsl(0deg 0% 0% / 25%),
+      0 2px 8px 2px hsl(0deg 0% 100% / 50%),
+      0 2px 4px 0 hsl(0deg 0% 0% / 25%);
+    filter: brightness(110%);
+  }
+
+  .movie-form__button--save:hover {
+    box-shadow:
+      inset 0 0 0 1px hsl(0deg 0% 100% / 50%),
+      inset 0 2px 0 0 hsl(0deg 0% 100% / 15%),
+      inset 0 -2px 0 0 hsl(0deg 0% 100% / 25%),
+      0 0 0 1px hsl(200deg 100% 25% / 50%),
+      0 2px 8px 2px hsl(200deg 100% 75% / 50%),
+      0 2px 4px 0 hsl(200deg 100% 25% / 50%);
+    background:
+      linear-gradient(
+        to right,
+        hsl(0deg 0% 0% / 5%),
+        transparent,
+        hsl(0deg 0% 0% / 5%)
+      ),
+      linear-gradient(
+        to bottom,
+        hsl(200deg 75% 95%),
+        hsl(200deg 75% 75%),
+        hsl(200deg 75% 80%)
+      );
+  }
+}
+
+.movie-form__button:active {
+  transition-duration: 5ms;
+  box-shadow:
+    inset 0 0 0 1px hsl(0deg 0% 100% / 50%),
+    inset 0 2px 0 0 hsl(0deg 0% 100% / 5%),
+    inset 0 -2px 0 0 hsl(0deg 0% 100% / 25%),
+    inset 0 2px 8px 2px hsl(0deg 0% 0% / 25%),
+    0 0 0 1px hsl(0deg 0% 0% / 25%);
+  filter: brightness(90%);
+}
+
+.movie-form__button--save:active {
+  box-shadow:
+    inset 0 0 0 1px hsl(0deg 0% 100% / 50%),
+    inset 0 2px 0 0 hsl(0deg 0% 100% / 5%),
+    inset 0 -2px 0 0 hsl(0deg 0% 100% / 25%),
+    inset 0 2px 8px 2px hsl(0deg 0% 0% / 25%),
+    0 0 0 1px hsl(200deg 100% 25% / 50%);
+  background:
+    linear-gradient(
+      to right,
+      hsl(0deg 0% 0% / 5%),
+      transparent,
+      hsl(0deg 0% 0% / 5%)
+    ),
+    linear-gradient(
+      to bottom,
+      hsl(200deg 75% 85%),
+      hsl(200deg 75% 65%),
+      hsl(200deg 75% 70%)
+    );
+}

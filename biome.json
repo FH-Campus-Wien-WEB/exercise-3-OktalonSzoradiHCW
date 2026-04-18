@@ -1,0 +1,43 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.4.10/schema.json",
+  "files": {
+    "includes": ["**/*.html", "**/*.css"]
+  },
+  "html": {
+    "experimentalFullSupportEnabled": true,
+    "parser": {
+      "interpolation": false
+    },
+    "formatter": {
+      "enabled": true,
+      "indentStyle": "space",
+      "indentWidth": 2,
+      "lineEnding": "lf",
+      "lineWidth": 80,
+      "attributePosition": "auto",
+      "bracketSameLine": false,
+      "whitespaceSensitivity": "css",
+      "indentScriptAndStyle": true,
+      "selfCloseVoidElements": "never",
+      "trailingNewline": true
+    },
+    "linter": {
+      "enabled": true
+    },
+    "assist": {
+      "enabled": true
+    }
+  },
+  "css": {
+    "formatter": {
+      "enabled": true,
+      "indentStyle": "space"
+    },
+    "linter": {
+      "enabled": true
+    },
+    "assist": {
+      "enabled": true
+    }
+  }
+}

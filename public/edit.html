@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editing – Movies!</title>
+    <link rel="stylesheet" href="css/base-style.css">
+    <link rel="stylesheet" href="css/main-style.css">
+    <link rel="stylesheet" href="css/responsive.style.css">
+    <link rel="stylesheet" href="css/edit-style.css">
+  </head>
+  <body>
+    <main id="app">
+      <h1 class="title">Editing a movie…</h1>
+      <p class="subtitle"></p>
+      <article class="movie" id="server-error">
+        <h2>Movie? What movie?</h2>
+        <p>
+          That movie couldn't be found. Return to the homepage to pick a movie
+          to edit.
+        </p>
+        <p><a class="movie__button" href="/">← Back to homepage</a></p>
+      </article>
+      <article class="movie" id="movie" hidden>
+        <h2>Edit Details</h2>
+        <p>Edit this movies details using the form below.</p>
+        <form class="movie-form" action="#">
+          <label class="movie-form__label" for="movie-form__title">Title</label>
+          <input
+            class="movie-form__input"
+            id="movie-form__title"
+            name="Title"
+            type="text"
+            required
+          >
+
+          <label class="movie-form__label" for="movie-form__released-on"
+            >Released On</label
+          >
+          <input
+            class="movie-form__input"
+            id="movie-form__released-on"
+            name="Released"
+            type="date"
+          >
+
+          <label class="movie-form__label" for="movie-form__runtime"
+            >Runtime (minutes)</label
+          >
+          <input
+            class="movie-form__input"
+            id="movie-form__runtime"
+            name="Runtime"
+            type="number"
+            min="0"
+          >
+
+          <label class="movie-form__label" for="movie-form__plot">Plot</label>
+          <textarea
+            class="movie-form__textarea"
+            id="movie-form__plot"
+            name="Plot"
+            rows="4"
+          ></textarea>
+
+          <label class="movie-form__label" for="movie-form__poster-url"
+            >Poster URL</label
+          >
+          <input
+            class="movie-form__input"
+            id="movie-form__poster-url"
+            name="Poster"
+            type="url"
+          >
+
+          <label class="movie-form__label" for="movie-form__metascore"
+            >Metascore</label
+          >
+          <input
+            class="movie-form__input"
+            id="movie-form__metascore"
+            name="Metascore"
+            type="number"
+            max="100"
+            min="0"
+          >
+
+          <label class="movie-form__label" for="movie-form__rating"
+            >IMDb Rating</label
+          >
+          <input
+            class="movie-form__input"
+            id="movie-form__rating"
+            name="imdbRating"
+            type="number"
+            max="10"
+            min="0"
+            step="0.1"
+          >
+
+          <label class="movie-form__label" for="movie-form__genres"
+            >Genres</label
+          >
+          <select
+            class="movie-form__select movie-form__select--multiple"
+            id="movie-form__genres"
+            name="Genres"
+            multiple
+          >
+            <option>Action</option>
+            <option>Adventure</option>
+            <option>Animation</option>
+            <option>Comedy</option>
+            <option>Crime</option>
+            <option>Disaster Film</option>
+            <option>Documentary</option>
+            <option>Drama</option>
+            <option>Eastern</option>
+            <option>Family</option>
+            <option>Fantasy</option>
+            <option>Historical Film</option>
+            <option>Horror</option>
+            <option>Musicals</option>
+            <option>Mystery</option>
+            <option>Road Movie</option>
+            <option>Sci-Fi</option>
+            <option>Thriller</option>
+            <option>TV Show</option>
+            <option>Western</option>
+          </select>
+
+          <label class="movie-form__label" for="movie-form__directors"
+            >Directors (comma-separated)</label
+          >
+          <input
+            class="movie-form__input"
+            id="movie-form__directors"
+            name="Directors"
+            type="text"
+          >
+
+          <label class="movie-form__label" for="movie-form__writers"
+            >Writers (comma-separated)</label
+          >
+          <input
+            class="movie-form__input"
+            id="movie-form__writers"
+            name="Writers"
+            type="text"
+          >
+
+          <label class="movie-form__label" for="movie-form__actors"
+            >Actors (comma-separated)</label
+          >
+          <input
+            class="movie-form__input"
+            id="movie-form__actors"
+            name="Actors"
+            type="text"
+          >
+
+          <div class="movie-form__buttons">
+            <hr>
+            <button
+              class="movie-form__button movie-form__button--save"
+              id="movie-form__button--save"
+              type="button"
+            >
+              Save
+            </button>
+            <a class="movie-form__button movie-form__button--cancel" href="/"
+              >Cancel</a
+            >
+          </div>
+        </form>
+      </article>
+    </main>
+    <script src="/js/edit.js" type="module"></script>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+@media (width < 1021px) {
+  /* stylelint-disable-next-line defensive-css/require-pure-selectors */
+  .movie:not([hidden]) {
+    max-inline-size: none;
+  }
+}
+
+@media (width < 401px) {
+  .movie__genres {
+    flex-wrap: wrap;
+  }
+}
