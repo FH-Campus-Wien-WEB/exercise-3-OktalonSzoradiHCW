@@ -1,7 +1,7 @@
 body {
-  font-family: "Trebuchet MS", sans-serif;
   background-color: brown;
   color: beige;
+  font-family: "Trebuchet MS", sans-serif;
 }
 
 main {
@@ -9,10 +9,10 @@ main {
 }
 
 button {
-    padding: 4px;
-    border-width: 1px;
-    border-radius: 4px;
-    font-size: 105%;
+  border-width: 1px;
+  border-radius: 4px;
+  padding: 4px;
+  font-size: 105%;
 }
 
 button:hover {

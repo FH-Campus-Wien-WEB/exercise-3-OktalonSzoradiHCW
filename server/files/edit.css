@@ -1,11 +1,11 @@
-@import url(base.css);
+@import url("base.css");
 
 input,
 select,
 textarea {
-  width: 100%;
+  inline-size: 100%;
 }
 
 div {
-  margin: 4px 0px;
+  margin: 4px 0;
 }
