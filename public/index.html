@@ -11,9 +11,23 @@
   <body>
     <header>
       <h1 class="title">Movies</h1>
+      <!-- <p class="subtitle">Have a look at this collection of movies.</p> -->
     </header>
+    <!-- Filtering should not be in a nav? -->
+    <nav>
+      <h2>Filter</h2>
+      <p>Genre:</p>
+      <ul class="genres" id="genres">
+        <li><button class="genre__button" type="button">All</button></li>
+        <li><button class="genre__button" type="button">Animation</button></li>
+        <li><button class="genre__button" type="button">Adventure</button></li>
+        <li><button class="genre__button" type="button">Comedy</button></li>
+        <li><button class="genre__button" type="button">Family</button></li>
+        <li><button class="genre__button" type="button">Mystery</button></li>
+        <li><button class="genre__button" type="button">Sci‑Fi</button></li>
+      </ul>
+    </nav>
     <main id="app">
-      <p class="subtitle">Have a look at this collection of movies.</p>
       <ul class="movies" id="movies">
         <li>
           <section id="server-error">

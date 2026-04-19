@@ -23,7 +23,7 @@ const formattedMovies = rawMovies.map(
     Title,
     Released: dateToISO8601format(Released),
     Runtime: Number.parseInt(Runtime),
-    Genres: Genre.split(', '),
+    Genres: Genre.split(', ').map(g => g.replace(/-/g, '\u2011')),
     Directors: Director.split(', '),
     Writers: Writer.split(', '),
     Actors: Actors.split(', '),
