@@ -6,6 +6,18 @@
 } */
 
 @media (width < 740px) {
+  /* stylelint-disable defensive-css/require-pure-selectors */
+  body {
+    display: initial;
+  }
+
+  nav {
+    position: relative;
+    inset-block-start: initial;
+    align-self: initial;
+  }
+  /* stylelint-enable defensive-css/require-pure-selectors */
+
   .movies__li {
     max-inline-size: unset;
   }

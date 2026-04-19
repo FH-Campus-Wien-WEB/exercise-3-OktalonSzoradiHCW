@@ -2,6 +2,7 @@
 header {
   position: sticky;
   inset-block-start: 0;
+  grid-area: header;
   z-index: 100;
 }
 
@@ -42,6 +43,7 @@ header {
 footer:not(.movie__button-area) {
   display: flex;
   flex-direction: column;
+  grid-area: footer;
   gap: 0.5rem;
   box-shadow:
     0 -8px 16px hsl(0deg 0% 0% / 25%),
@@ -89,7 +91,15 @@ footer:not(.movie__button-area) p {
 }
 
 nav {
+  position: sticky;
+  inset-block-start: 96px;
+  grid-area: nav;
+  align-self: start;
   padding: 0 1rem;
+}
+
+main {
+  grid-area: content;
 }
 /* stylelint-enable defensive-css/require-pure-selectors */
 
@@ -101,6 +111,7 @@ nav {
 }
 
 .genre__button {
+  position: relative;
   transition-duration: 1000ms;
   margin: 0 0.5rem 0.5rem 0;
   border: none;
@@ -110,24 +121,41 @@ nav {
     inset 0 2px 0 0 hsl(0deg 0% 100% / 5%),
     inset 0 -2px 0 0 hsl(0deg 0% 100% / 10%),
     0 0 0 1px hsl(0deg 0% 0% / 75%),
-    0 2px 4px 0 hsl(0deg 0% 0% / 25%);
+    0 2px 6px 0 hsl(0deg 0% 0% / 50%);
   background:
     linear-gradient(
       to right,
-      hsl(0deg 0% 0% / 5%),
+      hsl(0deg 0% 0% / 25%),
       transparent,
-      hsl(0deg 0% 0% / 5%)
+      hsl(0deg 0% 0% / 25%)
     ),
     linear-gradient(
       to bottom,
-      hsl(0deg 0% 45%),
-      hsl(0deg 0% 25%),
+      hsl(0deg 0% 55%),
+      hsl(0deg 0% 20%),
       hsl(0deg 0% 35%)
     );
   padding: 0.25rem 1rem;
   text-shadow: 0 -0.5pt 0.25pt hsl(0deg 0% 0% / 50%);
   color: hsl(0deg 0% 95%);
+  font-size: 1rem;
   cursor: pointer;
+}
+
+.genre__button::before {
+  display: block;
+  position: absolute;
+  inset-block-start: 2px;
+  inset-inline: 2px;
+  border-radius: 8px;
+  background: radial-gradient(
+    200% 100% at 50% 100%,
+    hsl(0deg 0% 100% / 5%) 40%,
+    hsl(0deg 0% 100% / 50%)
+  );
+  block-size: 50%;
+  inline-size: calc(100% - 4px);
+  content: "";
 }
 
 @media (hover: hover) {
@@ -168,11 +196,10 @@ nav {
   align-items: stretch;
   justify-content: stretch;
   margin: 2rem 0;
+  border-radius: 4px;
   box-shadow:
-    0 -1px 0 hsl(0deg 0% 0% / 33.3333%),
-    inset 0 1px 0 hsl(0deg 0% 100% / 50%),
-    inset 0 -1px 0 hsl(0deg 0% 100% / 50%),
-    0 1px 0 hsl(0deg 0% 0% / 33.3333%),
+    0 0 0 1px hsl(0deg 0% 0% / 33.3333%),
+    inset 0 0 0 1px hsl(0deg 0% 100% / 50%),
     0 4px 1rem hsl(0deg 0% 0% / 25%);
   background: linear-gradient(
     to bottom,
