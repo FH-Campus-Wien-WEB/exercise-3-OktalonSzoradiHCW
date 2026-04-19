@@ -1,12 +1,12 @@
-@media (width < 1021px) {
-  /* stylelint-disable-next-line defensive-css/require-pure-selectors */
-  .movie:not([hidden]) {
-    max-inline-size: none;
+/* @media (width < 768px) {
+  .movies__li {
+    inline-size: calc(50vb + 2rem);
+    max-inline-size: unset;
   }
-}
+} */
 
-@media (width < 401px) {
-  .movie__genres {
-    flex-wrap: wrap;
+@media (width < 740px) {
+  .movies__li {
+    max-inline-size: unset;
   }
 }
