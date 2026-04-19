@@ -48,7 +48,11 @@ function dateToISO8601format (input) {
   return `${year}-${month}-${day}`
 }
 
-export async function getMoviesJson () {
+export async function getMoviesJson (genre) {
+  if (genre && genre.toLowerCase() !== 'all') {
+    return formattedMovies.filter(movie => movie.genres.includes(genre))
+  }
+
   return formattedMovies
 }
 

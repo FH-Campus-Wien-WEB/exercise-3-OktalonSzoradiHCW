@@ -149,23 +149,36 @@ function createMovieCard (movie) {
   return li
 }
 
-function handleGenres () {
+function makeGenre (genre) {
   const genres = document.querySelector('#genres')
+  const genreFilter = createHtmlElement('li')
+  const genreFilterButton = createHtmlElement('button', 'genre__button', genre)
+  genreFilterButton.type = 'button'
+  genreFilterButton.addEventListener('click', () => {
+    const xhr2 = new XMLHttpRequest()
+    xhr2.onload = () => {
+      const movies = document.querySelector('#movies')
+      movies.innerHTML = ''
+      const response = JSON.parse(xhr2.responseText)
+      for (const movie of response) {
+        movies.appendChild(createMovieCard(movie))
+      }
+    }
+    xhr2.open('GET', `/movies?genre=${genre}`)
+    xhr2.send()
+  })
+  genreFilter.appendChild(genreFilterButton)
+  genres.appendChild(genreFilter)
+}
 
+function handleGenres () {
   const xhr = new XMLHttpRequest()
-  xhr.onload = function () {
+  xhr.onload = () => {
     if (xhr.status === 200) {
       const response = JSON.parse(xhr.responseText)
+      makeGenre('All')
       for (const genre of response) {
-        const genreFilter = createHtmlElement('li')
-        const genreFilterButton = createHtmlElement(
-          'button',
-          'genre__button',
-          genre
-        )
-        genreFilterButton.type = 'button'
-        genreFilter.appendChild(genreFilterButton)
-        genres.appendChild(genreFilter)
+        makeGenre(genre)
       }
     } else {
       console.error('Could not GET /genres', xhr)
@@ -175,9 +188,9 @@ function handleGenres () {
   xhr.send()
 }
 
-window.onload = function () {
+window.onload = () => {
   const xhr = new XMLHttpRequest()
-  xhr.onload = function () {
+  xhr.onload = () => {
     const movies = document.querySelector('#movies')
     if (xhr.status === 200) {
       const errorMessage = document.querySelector('#server-error')

@@ -82,7 +82,7 @@ function putMovie () {
   const xhr = new XMLHttpRequest()
   xhr.open('PUT', `/movies/${imdbID}`)
   xhr.setRequestHeader('Content-Type', 'application/json')
-  xhr.onload = function () {
+  xhr.onload = () => {
     if (xhr.status === 200 || xhr.status === 204) {
       location.href = 'index.html'
     } else {
@@ -102,7 +102,7 @@ const imdbID = new URLSearchParams(window.location.search).get('imdbID')
 
 const xhr = new XMLHttpRequest()
 xhr.open('GET', `/movies/${imdbID}`)
-xhr.onload = function () {
+xhr.onload = () => {
   const serverErrorElement = document.querySelector('#server-error')
   if (xhr.status === 200) {
     const responseJSON = JSON.parse(xhr.responseText)
