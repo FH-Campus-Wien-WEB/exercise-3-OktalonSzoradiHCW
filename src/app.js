@@ -4,6 +4,7 @@ import morgan from 'morgan'
 import path from 'path'
 
 import moviesRoute from './routes/movies-route.js'
+import genresRoute from './routes/genres-route.js'
 
 const PORT = 3000
 
@@ -16,6 +17,7 @@ app.use(express.static(path.join(dirname, '/public')))
 app.use(express.json())
 
 app.use('/movies', moviesRoute)
+app.use('/genres', genresRoute)
 
 app.listen(PORT, () => {
   console.log(
