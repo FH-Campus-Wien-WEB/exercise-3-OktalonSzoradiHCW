@@ -38,6 +38,57 @@ header {
   margin: 0 1rem;
 }
 
+/* stylelint-disable defensive-css/require-pure-selectors */
+footer:not(.movie__button-area) {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  box-shadow:
+    0 -8px 16px hsl(0deg 0% 0% / 25%),
+    0 -1px 0 hsl(0deg 0% 0% / 66.6667%),
+    inset 0 1px 0 hsl(0deg 0% 100% / 33.3333%),
+    0 1px 0 hsl(0deg 0% 100% / 50%),
+    0 2px 0 hsl(0deg 0% 0% / 66.6667%),
+    0 8px 16px hsl(0deg 0% 0% / 25%);
+    /* 0 64px 16px 16px hsl(0deg 0% 20% / 90%); */
+  background:
+    linear-gradient(
+      to right,
+      hsl(0deg 0% 0% / 10%),
+      transparent,
+      hsl(0deg 0% 0% / 10%)
+    ),
+    linear-gradient(
+      to bottom,
+      hsl(0deg 0% 50% / 90%),
+      hsl(0deg 0% 6.6667% / 90%),
+      hsl(0deg 0% 20% / 90%)
+    );
+  padding: 1rem;
+  text-shadow: 0 1pt 4pt hsl(0deg 0% 0%);
+  color: hsl(0deg 0% 85%);
+  font-size: 0.9rem;
+}
+
+footer:not(.movie__button-area) a {
+  color: hsl(200deg 100% 85%);
+}
+
+footer:not(.movie__button-area) a:visited {
+  color: hsl(256deg 100% 85%);
+}
+
+footer:not(.movie__button-area) p {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  row-gap: 0;
+  align-items: baseline;
+  margin: 0;
+  padding: 0;
+}
+/* stylelint-enable defensive-css/require-pure-selectors */
+
 .movies {
   display: flex;
   flex-wrap: wrap;
@@ -143,9 +194,11 @@ header {
 
 .movie__button-area {
   display: flex;
+  flex: 1;
   flex-wrap: wrap;
+  align-items: end;
   justify-content: center;
-  margin-block-start: 1rem;
+  margin: 2rem 0 0.5rem;
 }
 
 .movie__button {
