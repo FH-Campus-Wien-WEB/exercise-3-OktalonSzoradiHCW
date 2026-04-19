@@ -128,3 +128,17 @@ xhr.onload = function () {
 }
 
 xhr.send()
+
+// const form = document.querySelector('form')
+// let isDirty = false
+
+// form.addEventListener('input', () => {
+//   isDirty = true
+// })
+
+// window.addEventListener('beforeunload', e => {
+//   if (!isDirty) return
+
+//   e.preventDefault()
+//   e.returnValue = ''
+// })

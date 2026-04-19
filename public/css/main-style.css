@@ -1,16 +1,37 @@
+/* stylelint-disable-next-line defensive-css/require-pure-selectors */
+header {
+  position: sticky;
+  inset-block-start: 0;
+}
+
 .title {
+  inset-block-start: 0;
   margin: 0 0 2rem;
   box-shadow:
     inset 0 -1px 0 hsl(0deg 0% 100% / 50%),
     0 1px 0 hsl(0deg 0% 0% / 33.3333%),
     0 8px 16px hsl(0deg 0% 0% / 25%);
-  background: linear-gradient(
-    to bottom,
-    hsl(0deg 0% 100%),
-    hsl(0deg 0% 66.6667%),
-    hsl(0deg 0% 80%)
-  );
+  /* stylelint-disable-next-line plugin/use-baseline */
+  backdrop-filter: blur(4px);
+  background:
+    linear-gradient(
+      to right,
+      hsl(0deg 0% 0% / 10%),
+      transparent,
+      hsl(0deg 0% 0% / 10%)
+    ),
+    linear-gradient(
+      to bottom,
+      hsl(0deg 0% 100% / 90%),
+      hsl(0deg 0% 66.6667% / 90%),
+      hsl(0deg 0% 80% / 90%)
+    );
   padding: 1rem;
+  text-shadow:
+    0 -1pt 1pt hsl(0deg 0% 100% / 66.6667%),
+    0 1pt 1.5pt hsl(0deg 0% 100% / 50%),
+    0 2pt 3pt hsl(0deg 0% 0% / 25%);
+  color: hsl(0deg 0% 5%);
 }
 
 .subtitle {
@@ -39,17 +60,6 @@
   padding: 0;
   inline-size: 100%;
   list-style: "";
-}
-
-.movies__error {
-  flex-direction: column;
-  justify-content: start;
-  background: linear-gradient(
-    to bottom,
-    hsl(0deg 100% 75% / 50%),
-    hsl(0deg 100% 40% / 50%),
-    hsl(0deg 100% 50% / 50%)
-  );
 }
 
 .movies__li {
@@ -201,4 +211,39 @@
     inset 0 2px 8px 2px hsl(0deg 0% 0% / 25%),
     0 0 0 1px hsl(0deg 0% 0% / 25%);
   filter: brightness(90%);
+}
+
+.movies__error {
+  flex-direction: column;
+  justify-content: start;
+  background: linear-gradient(
+    to bottom,
+    hsl(0deg 100% 75% / 50%),
+    hsl(0deg 100% 40% / 50%),
+    hsl(0deg 100% 50% / 50%)
+  );
+  padding: 0 1rem;
+  text-shadow:
+    0 1pt 4pt hsl(0deg 0% 100% / 50%),
+    0 1pt 2pt hsl(0deg 0% 100% / 75%);
+  color: hsl(0deg 0% 5%);
+}
+
+#server-error {
+  padding: 0 1rem;
+  inline-size: calc(100% - 2rem);
+  text-shadow: 0 2pt 3pt hsl(0deg 100% 75% / 25%);
+  color: hsl(0deg 100% 25%);
+}
+
+#server-error.movies__error {
+  text-shadow:
+    0 1pt 4pt hsl(0deg 0% 100% / 50%),
+    0 1pt 2pt hsl(0deg 0% 100% / 75%);
+}
+
+.movies__error #server-error {
+  padding: 0;
+  text-shadow: inherit;
+  color: inherit;
 }

@@ -1,6 +1,17 @@
 /* stylelint-disable defensive-css/require-pure-selectors */
 
+@keyframes pulse {
+  from {
+    filter: brightness(100%);
+  }
+
+  to {
+    filter: brightness(115%);
+  }
+}
+
 .movie:not([hidden]) {
+  margin: 2rem 0;
   max-inline-size: initial;
 }
 
@@ -105,6 +116,12 @@ hr {
       hsl(200deg 50% 75%),
       hsl(200deg 50% 80%)
     );
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .movie-form__button--save {
+    animation: pulse 2s linear alternate infinite;
+  }
 }
 
 @media (hover: hover) {
