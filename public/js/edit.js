@@ -2,15 +2,15 @@
 import { createHtmlElement } from './util.js'
 
 function setMovie (movie) {
-  document.title = `Editing ${movie.Title} – Movies!`
-  document.querySelector('h1.title').innerText = `Editing ${movie.Title}`
+  document.title = `Editing ${movie.title} – Movies!`
+  document.querySelector('h1.title').innerText = `Editing ${movie.title}`
   // document.querySelector('#movie').innerText = JSON.stringify(movie)
 
   for (const element of document.forms[0].elements) {
     const name = element.name
     const value = movie[name]
 
-    if (name === 'Genres') {
+    if (name === 'genres') {
       const options = element.options
       for (let index = 0; index < options.length; index++) {
         const option = options[index]
@@ -34,7 +34,7 @@ function getMovie () {
 
     let value
 
-    if (name === 'Genres') {
+    if (name === 'genres') {
       value = []
       const options = element.options
       for (let index = 0; index < options.length; index++) {
@@ -44,15 +44,15 @@ function getMovie () {
         }
       }
     } else if (
-      name === 'Metascore' ||
-      name === 'Runtime' ||
+      name === 'metascore' ||
+      name === 'runtime' ||
       name === 'imdbRating'
     ) {
       value = Number(element.value)
     } else if (
-      name === 'Actors' ||
-      name === 'Directors' ||
-      name === 'Writers'
+      name === 'actors' ||
+      name === 'directors' ||
+      name === 'writers'
     ) {
       value = element.value
         .split(',')

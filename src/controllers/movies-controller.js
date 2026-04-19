@@ -32,16 +32,16 @@ export async function editMovie (req, res) {
   }
 
   const {
-    Title,
-    Released,
-    Runtime,
-    Genres,
-    Directors,
-    Writers,
-    Actors,
-    Plot,
-    Poster,
-    Metascore,
+    title,
+    released,
+    runtime,
+    genres,
+    directors,
+    writers,
+    actors,
+    plot,
+    poster,
+    metascore,
     imdbRating
   } = req.body
 
@@ -55,16 +55,16 @@ export async function editMovie (req, res) {
   )
 
   const editedMovie = await model.editMovieJson(imdbID, {
-    Title,
-    Released,
-    Runtime,
-    Genres,
-    Directors,
-    Writers,
-    Actors,
-    Plot,
-    Poster,
-    Metascore,
+    title,
+    released,
+    runtime,
+    genres,
+    directors,
+    writers,
+    actors,
+    plot,
+    poster,
+    metascore,
     imdbRating
   })
 

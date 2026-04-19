@@ -3,16 +3,16 @@ import { createHtmlElement } from './util.js'
 
 /**
  * @typedef {Object} Movie
- * @property {string} Title
- * @property {string} Released
- * @property {number | string} Runtime
- * @property {string[]} Genres
- * @property {string[]} Directors
- * @property {string[]} Writers
- * @property {string[]} Actors
- * @property {string} Plot
- * @property {string} Poster
- * @property {number} Metascore
+ * @property {string} title
+ * @property {string} released
+ * @property {number | string} runtime
+ * @property {string[]} genres
+ * @property {string[]} directors
+ * @property {string[]} writers
+ * @property {string[]} actors
+ * @property {string} plot
+ * @property {string} poster
+ * @property {number} metascore
  * @property {number} imdbRating
  */
 
@@ -77,20 +77,20 @@ function createMovieCard (movie) {
 
   const imageWrapper = createHtmlElement('picture', 'movie__poster-area')
   const image = createHtmlElement('img', 'movie__poster')
-  image.src = movie.Poster
-  image.alt = `Movie poster for ${movie.Title}`
+  image.src = movie.poster
+  image.alt = `Movie poster for ${movie.title}`
   imageWrapper.appendChild(image)
 
-  const title = createHtmlElement('h2', 'movie__title', movie.Title)
+  const title = createHtmlElement('h2', 'movie__title', movie.title)
 
   const metadata = createHtmlElement(
     'span',
     'movie__runtime-and-release',
     /* eslint-disable no-irregular-whitespace */
     [
-      `${movie.Runtime ? `Runtime: ${movie.Runtime} minutes` : ''}`,
-      `Released: ${movie.Released}`,
-      `${movie.Metascore ? `Metascore: ${movie.Metascore}` : ''}`,
+      `${movie.runtime ? `Runtime: ${movie.runtime} minutes` : ''}`,
+      `Released: ${movie.released}`,
+      `${movie.metascore ? `Metascore: ${movie.metascore}` : ''}`,
       `${movie.imdbRating ? `IMDb Rating: ${movie.imdbRating}` : ''}`
     ]
       .filter(md => Boolean(md))
@@ -98,27 +98,27 @@ function createMovieCard (movie) {
     /* eslint-enable no-irregular-whitespace */
   )
 
-  const genres = createList(movie.Genres, 'movie__genres', 'movie__genre')
+  const genres = createList(movie.genres, 'movie__genres', 'movie__genre')
 
-  const description = createHtmlElement('p', 'movie__description', movie.Plot)
+  const description = createHtmlElement('p', 'movie__description', movie.plot)
 
   const directors = createSection(
     'Director',
-    movie.Directors,
+    movie.directors,
     'movie__directors',
     'movie__director'
   )
 
   const writers = createSection(
     'Writer',
-    movie.Writers,
+    movie.writers,
     'movie__writers',
     'movie__writer'
   )
 
   const actors = createSection(
     'Actor',
-    movie.Actors,
+    movie.actors,
     'movie__actors',
     'movie__actor'
   )
@@ -153,6 +153,7 @@ window.onload = function () {
   const xhr = new XMLHttpRequest()
   xhr.onload = function () {
     const movies = document.querySelector('#movies')
+    const genres = document.querySelector('#genres')
     if (xhr.status === 200) {
       const errorMessage = document.querySelector('#server-error')
       errorMessage.remove()

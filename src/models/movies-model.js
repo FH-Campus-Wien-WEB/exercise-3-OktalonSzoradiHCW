@@ -20,15 +20,15 @@ const formattedMovies = rawMovies.map(
     imdbRating
   }) => ({
     imdbID,
-    Title,
-    Released: dateToISO8601format(Released),
-    Runtime: Number.parseInt(Runtime),
-    Genres: Genre.split(', ').map(g => g.replace(/-/g, '\u2011')),
-    Directors: Director.split(', '),
-    Writers: Writer.split(', '),
-    Actors: Actors.split(', '),
-    Plot,
-    Poster,
+    title: Title,
+    released: dateToISO8601format(Released),
+    runtime: Number.parseInt(Runtime),
+    genres: Genre.split(', ').map(g => g.replace(/-/g, '\u2011')),
+    directors: Director.split(', '),
+    writers: Writer.split(', '),
+    actors: Actors.split(', '),
+    plot: Plot,
+    poster: Poster,
     Metascore: Number(Metascore),
     imdbRating: Number(imdbRating)
   })
