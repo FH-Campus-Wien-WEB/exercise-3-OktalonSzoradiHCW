@@ -149,15 +149,41 @@ function createMovieCard (movie) {
   return li
 }
 
+function handleGenres () {
+  const genres = document.querySelector('#genres')
+
+  const xhr = new XMLHttpRequest()
+  xhr.onload = function () {
+    if (xhr.status === 200) {
+      const response = JSON.parse(xhr.responseText)
+      for (const genre of response) {
+        const genreFilter = createHtmlElement('li')
+        const genreFilterButton = createHtmlElement(
+          'button',
+          'genre__button',
+          genre
+        )
+        genreFilterButton.type = 'button'
+        genreFilter.appendChild(genreFilterButton)
+        genres.appendChild(genreFilter)
+      }
+    } else {
+      console.error('Could not GET /genres', xhr)
+    }
+  }
+  xhr.open('GET', '/genres')
+  xhr.send()
+}
+
 window.onload = function () {
   const xhr = new XMLHttpRequest()
   xhr.onload = function () {
     const movies = document.querySelector('#movies')
-    const genres = document.querySelector('#genres')
     if (xhr.status === 200) {
       const errorMessage = document.querySelector('#server-error')
       errorMessage.remove()
       const response = JSON.parse(xhr.responseText)
+      handleGenres()
       for (const movie of response) {
         movies.appendChild(createMovieCard(movie))
       }
