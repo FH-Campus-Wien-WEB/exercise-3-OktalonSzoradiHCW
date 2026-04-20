@@ -149,12 +149,24 @@ function createMovieCard (movie) {
   return li
 }
 
+function resetGenreButtonClassLists () {
+  ;[...document.querySelectorAll('.genre__button--active')].forEach(
+    g => (g.classList = 'genre__button')
+  )
+}
+
 function makeGenre (genre) {
   const genres = document.querySelector('#genres')
   const genreFilter = createHtmlElement('li')
-  const genreFilterButton = createHtmlElement('button', 'genre__button', genre)
+  const genreFilterButton = createHtmlElement(
+    'button',
+    `genre__button${genre === 'All' ? ' genre__button--active' : ''}`,
+    genre
+  )
   genreFilterButton.type = 'button'
   genreFilterButton.addEventListener('click', () => {
+    resetGenreButtonClassLists()
+    genreFilterButton.classList = 'genre__button genre__button--active'
     const xhr2 = new XMLHttpRequest()
     xhr2.onload = () => {
       const movies = document.querySelector('#movies')
