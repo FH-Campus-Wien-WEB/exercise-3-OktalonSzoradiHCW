@@ -43,6 +43,8 @@ header {
 /* stylelint-disable defensive-css/require-pure-selectors */
 footer:not(.movie__button-area) {
   display: flex;
+  position: sticky;
+  inset-block-end: 0;
   flex-direction: column;
   grid-area: footer;
   gap: 0.5rem;
@@ -105,6 +107,7 @@ nav {
 
 main {
   grid-area: content;
+  /* overflow-block: auto; */
 }
 /* stylelint-enable defensive-css/require-pure-selectors */
 
