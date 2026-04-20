@@ -140,6 +140,7 @@ main {
   text-shadow: 0 -0.5pt 0.25pt hsl(0deg 0% 0% / 50%);
   color: hsl(0deg 0% 95%);
   font-size: 1rem;
+  /* font-weight: bold; */
   cursor: pointer;
 }
 
@@ -192,7 +193,6 @@ main {
       0 0 2px hsl(0deg 0% 0%),
       0 0 8px hsl(0deg 0% 100%);
     color: hsl(0deg 0% 100%);
-    font-weight: bold;
   }
 }
 
@@ -232,7 +232,6 @@ main {
     0 0 2px hsl(0deg 0% 0%),
     0 0 8px hsl(0deg 0% 100%);
   color: hsl(0deg 0% 100%);
-  font-weight: bold;
 }
 
 .movies {
