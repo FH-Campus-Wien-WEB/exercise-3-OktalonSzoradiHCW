@@ -46,6 +46,7 @@ footer:not(.movie__button-area) {
   flex-direction: column;
   grid-area: footer;
   gap: 0.5rem;
+  z-index: 90;
   box-shadow:
     0 -8px 16px hsl(0deg 0% 0% / 25%),
     0 -1px 0 hsl(0deg 0% 0% / 66.6667%),
@@ -54,6 +55,8 @@ footer:not(.movie__button-area) {
     0 2px 0 hsl(0deg 0% 0% / 66.6667%),
     0 8px 16px hsl(0deg 0% 0% / 25%);
   /* 0 64px 16px 16px hsl(0deg 0% 20% / 90%); */
+  /* stylelint-disable-next-line plugin/use-baseline */
+  backdrop-filter: blur(4px);
   background:
     linear-gradient(
       to right,
@@ -95,6 +98,7 @@ nav {
   position: sticky;
   inset-block-start: 96px;
   grid-area: nav;
+  /* TODO next-line: Leaks into footer… how to solve? */
   align-self: start;
   padding: 0 1rem;
 }
