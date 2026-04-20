@@ -264,7 +264,7 @@ main {
 .movies__li {
   flex: 1;
   padding: 1rem;
-  max-inline-size: calc(30vi - 2rem);
+  min-inline-size: calc(18vi - 2rem);
 }
 
 /* stylelint-disable-next-line defensive-css/require-pure-selectors */

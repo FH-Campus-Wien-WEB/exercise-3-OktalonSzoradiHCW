@@ -1,11 +1,4 @@
-/* @media (width < 768px) {
-  .movies__li {
-    inline-size: calc(50vb + 2rem);
-    max-inline-size: unset;
-  }
-} */
-
-@media (width < 740px) {
+@media (width < 768px) {
   /* stylelint-disable defensive-css/require-pure-selectors */
   body {
     display: initial;
@@ -17,8 +10,10 @@
     align-self: initial;
   }
   /* stylelint-enable defensive-css/require-pure-selectors */
+}
 
+@media (width < 1200px) {
   .movies__li {
-    max-inline-size: unset;
+    min-inline-size: unset;
   }
 }

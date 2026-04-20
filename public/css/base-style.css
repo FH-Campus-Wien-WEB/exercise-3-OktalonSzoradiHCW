@@ -6,7 +6,7 @@ body {
     "nav content"
     "footer footer";
   grid-template-columns:
-    [full-start] 192px
+    [full-start] 160px
     [content-start] 1fr
     [full-end];
   gap: 1rem;
